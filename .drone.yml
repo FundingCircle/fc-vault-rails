@@ -21,6 +21,7 @@ anchors:
     VAULT_VERSION: 
       from_secret: vault_version
   commands: &commands
+    - echo "test"
     - apk add --no-cache curl
     - curl -sSL -o /usr/local/bin/vault.zip https://releases.hashicorp.com/vault/$(echo $VAULT_VERSION)/vault_$(echo $VAULT_VERSION)_linux_amd64.zip
     - unzip /usr/local/bin/vault.zip -d /usr/local/bin
